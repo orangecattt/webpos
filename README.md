@@ -48,23 +48,23 @@
 
 - 1个商品微服务，连续10次每次500个同时请求，每次请求64个商品：可以看到由于采用了响应式架构，平均响应时间仅有不到600ms，且没有失败的请求
 
-  ![](D:\code\software_architecture\aw09-orangecattt\实验结果\1x500x10.png)
+  ![](实验结果/1x500x10.png)
 
 - 1个商品微服务，连续10次每次2000个同时请求：即使采用了响应式架构，一个微服务还是应对不了如此高并发的请求
 
-  ![](D:\code\software_architecture\aw09-orangecattt\实验结果\1x2000x10.png)
+  ![](实验结果/1x2000x10.png)
 
 - 4个商品微服务，连续10次每次2000个同时请求：水平扩展，可以看到此时不会有请求失败出现，且平均响应时间仅有1200ms左右
 
-  - ![](D:\code\software_architecture\aw09-orangecattt\实验结果\4x2000x10.png)
+	![](实验结果/4x2000x10.png)
 
 
 ### 健壮性
 
 - 访问不存在的资源
 
-  ![](D:\code\software_architecture\aw09-orangecattt\实验结果\不存在的资源.png)
+  ![](实验结果/不存在的资源.png)
 
 - 断开商品微服务，请求商品
 
-	![](D:\code\software_architecture\aw09-orangecattt\实验结果\微服务断开.png)
+	![](实验结果/微服务断开.png)
