@@ -2,7 +2,7 @@ spring:
   application:
     name: order-service
   r2dbc:
-    url: r2dbc:mysql://localhost:3306/rest
+    url: r2dbc:mysql://localhost:3306/webpos
     username: root
     password: root
   sql:

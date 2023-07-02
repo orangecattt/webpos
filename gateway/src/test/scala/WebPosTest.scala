@@ -22,5 +22,5 @@ class WebPosTest extends Simulation {
       )
     }
 
-  setUp(scn.inject(atOnceUsers(500)).protocols(httpProtocol))
+  setUp(scn.inject(atOnceUsers(1000)).protocols(httpProtocol))
 }
