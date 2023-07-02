@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS product (
+    asin CHAR(64) PRIMARY KEY,
+    main_cat VARCHAR(8192),
+    title VARCHAR(8192),
+    category VARCHAR(8192),
+    imageURLHighRes VARCHAR(8192) 
+) CHARACTER SET 'latin1' COLLATE LATIN1_DANISH_CI;

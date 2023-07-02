@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>event-driven-pos</groupId>
+    <artifactId>gateway</artifactId>
+    <version>0.0.1</version>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- web -->
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+
+        <!-- 定义了资源的数据结构（数据+链接） -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+        <!-- 让ResponseEntity将返回的资源对象转换成json格式 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <!-- micro-services -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
+        <!-- tools -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>io.gatling.highcharts</groupId>
+          <artifactId>gatling-charts-highcharts</artifactId>
+          <version>3.9.5</version>
+          <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <testSourceDirectory>src/test/scala</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+              <groupId>io.gatling</groupId>
+              <artifactId>gatling-maven-plugin</artifactId>
+              <version>4.3.0</version>
+            </plugin>
+            <plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<version>4.8.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<jvmArgs>
+								<jvmArg>-Xss100M</jvmArg>
+							</jvmArgs>
+							<args>
+								<arg>-deprecation</arg>
+								<arg>-feature</arg>
+								<arg>-unchecked</arg>
+								<arg>-language:implicitConversions</arg>
+								<arg>-language:postfixOps</arg>
+							</args>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+        </plugins>
+    </build>
+
+</project>

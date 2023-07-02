@@ -1,0 +1,8 @@
+.vscode
+.metals
+discovery-server/target
+gateway/target
+product-service/target
+cart-service/target
+order-service/target
+delivery-service/target
