@@ -18,7 +18,8 @@
   - GET /deliveries：获取所有快递单
   - GET /deliveries?orderId={orderId}：根据订单号查询快递单
   - GET /deliveries/{deliveryId}：获取某个快递单
-- 购买：PUT /buy：会根据购物车项生成订单和快递单，然后清空购物车
+- 购买：
+  - PUT /buy：会根据购物车项生成订单和快递单，然后清空购物车
 
 ## 设计思想
 
